@@ -11,3 +11,6 @@ def jogar_tabuada():
         print(f"voce acertou, o resultado é: {resultado}" )
     else:
         print("voce errou, tente de novo")
+
+if __name__ == "__main__":
+    jogar_tabuada()

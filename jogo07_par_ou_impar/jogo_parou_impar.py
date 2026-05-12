@@ -23,3 +23,6 @@ def jogar_par_ou_impar():
         print("Voce ganhou")
     else:
         print("Voce perdeu")
+
+    if __name__ == "__main__":
+        jogar_par_ou_impar()

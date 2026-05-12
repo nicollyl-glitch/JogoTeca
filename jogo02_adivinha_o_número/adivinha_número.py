@@ -68,7 +68,8 @@ def jogar_adivinha_número():
                 print("voce errou")
                 print(f"eu estava pensando no número {escolha4}")
 
-
+if __name__ == "__main__":
+     jogar_adivinha_número()
 
 
 

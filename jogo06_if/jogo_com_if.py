@@ -21,4 +21,5 @@ def jogar_com_if():
     elif escolhadapessoa == "pedra" and escolhacomputador == "tesoura":
         print("voce ganhou, pedra bate na tesoura")
 
-
+if __name__ == "__main__":
+    jogar_com_if()

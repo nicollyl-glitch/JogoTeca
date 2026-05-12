@@ -23,3 +23,5 @@ def jogar_cara_ou_coroa():
         print("voce perdeu")
         print(f"caiu {escolhacomputador}")
 
+if __name__ == "__main__":
+    jogar_cara_ou_coroa()

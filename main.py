@@ -4,7 +4,7 @@ from jogo3_tabuada.jogo_tabuada import jogar_tabuada
 from jogo05_cara_ou_coroa.cara_ou_coroa import jogar_cara_ou_coroa
 from jogo06_if.jogo_com_if import jogar_com_if
 from jogo07_par_ou_impar.jogo_parou_impar import jogar_par_ou_impar
-
+from genius import jogo_acertar_cores
 while True:
   print("""
         ✴.·´¯`·.·★  🎀𝓳𝓸𝓰𝓸 𝓽𝓮𝓬𝓪🎀  ★·.·`¯´·.✴
@@ -12,7 +12,7 @@ while True:
   # ######################################################## #
   #            01- Mad Libs                                  #
   #            02- adivinha o número                         #
-  #            03- tabuada                                   #                                 #
+  #            03- tabuada                                   #                                 
   #            04- cara ou coroa                             #
   #            05- jogo com if                               #
   #            06- par ou impar
