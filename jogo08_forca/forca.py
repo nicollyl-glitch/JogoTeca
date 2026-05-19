@@ -124,17 +124,59 @@ def gerar_tracos(palavra:str) -> list :
 
 
 def perguntar_letra() ->str:
-    resposta = input("Digite UMA letra: ").upper()
-    if resposta != 1:
+    resposta = input("Digite UMA letra: ").lower()
+    while len(resposta) != 1:
         print("Eu disse UMA letra")
-        resposta2 = input("Digite UMA letra: ")
-pergunta = perguntar_letra()    
+        input("Digite UMA letra: ")
+    return resposta    
 
 def jogar_forca():
-#Tela inicial do jogo
-  
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+    #Tela inicial do jogo
+
+        print("""   
+        ____     ___  ___ ___                 __ __  ____  ____   ___     ___        ____      _____   ___   ____      __   ____ 
+        |    \   /  _]|   |   |               |  |  ||    ||    \ |   \   /   \      /    |    |     | /   \ |    \    /  ] /    |
+        |  o  ) /  [_ | _   _ |     _____     |  |  | |  | |  _  ||    \ |     |    |  o  |    |   __||     ||  D  )  /  / |  o  |
+        |     ||    _]|  \_/  |    |     |    |  |  | |  | |  |  ||  D  ||  O  |    |     |    |  |_  |  O  ||    /  /  /  |     |
+        |  O  ||   [_ |   |   |    |_____|    |  :  | |  | |  |  ||     ||     |    |  _  |    |   _] |     ||    \ /   \_ |  _  |
+        |     ||     ||   |   |                \   /  |  | |  |  ||     ||     |    |  |  |    |  |   |     ||  .  \\     ||  |  |
+        |_____||_____||___|___|                 \_/  |____||__|__||_____| \___/     |__|__|    |__|    \___/ |__|\_| \____||__|__|
+                                                                                                                            """)
+        input("Aperte ENTER para começar")
+        contador_de_erro = 0
+        palavra_escolhida = escolher_palavra()
+        lista_tracos = gerar_tracos(palavra_escolhida)
+        lista_tentativas = []
+        while True:
+            limpar_tela()
+            desenhar_forca(contador_de_erro)   
+            lista_tentativas.append(letra_chutada)
+            print(f"você errou:{lista_tentativas}") 
+            print(*lista_tracos)
+            #Verificando se ele ganhou
+            if "_" not in lista_tracos:
+                print("Parabéns, você ganhou!!!")
+                break
+            letra_chutada = perguntar_letra()
+            if letra_chutada  not in palavra_escolhida:
+                contador_de_erro += 1
+                if contador_de_erro == 9 :
+                 print("VOCÊ PERDEU")
+                 print(f"A palavra era {palavra_escolhida}")        
+                 break    
+            if letra_chutada in palavra_escolhida:
+                contador = 0
+                for  letra_palavra in palavra_escolhida:
+                    if letra_palavra == letra_chutada:
+                         lista_tracos[contador] = letra_chutada
+                    contador += 1
+                
+            
+            
+
+
+if __name__ == "__main__": 
+    jogar_forca()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
